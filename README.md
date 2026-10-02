@@ -1,8 +1,8 @@
 
 <p align="center">
 
-<img src="images/banner.png">
-
+<img src="images/banner.png" height="220">
+<br><br>
 <img src="https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white">
 <img src="https://img.shields.io/badge/Flask-Web%20App-000000?logo=flask&logoColor=white">
 <img src="https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?logo=javascript&logoColor=black">
