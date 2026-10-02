@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jev Rabbit | Rabbit Behavior Simulator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="workspace">
+      <section class="simulation-panel panel">
+        <div class="habitat" id="habitat" aria-label="بيئة المحاكاة">
+          <div class="habitat-grid"></div>
+          <div class="axis-label axis-x">+ X</div><div class="axis-label axis-y">+ Y</div>
+          <div class="rabbit" id="rabbit" style="left:50%;top:50%">
+            <img src="images/rabbit_normal.png" alt="Rabbit">
+            <span class="rabbit-shadow"></span>
+          </div>
+          <button class="clear-button" id="clearButton" type="button">Clear habitat</button>
+          <div class="status-pill"><span class="status-dot"></span><span id="connectionStatus">Ready</span></div>
+          <div class="drop-hint">Drag elements here<br><small>or keep dragging to guide the rabbit</small></div>
+        </div>
+        <div class="sim-footer"><span><i class="legend-dot rabbit-dot"></i> Rabbit</span><span><i class="legend-dot view-dot"></i> View field</span><span class="coordinates" id="coordinates">x: 50 / y: 50</span></div>
+      </section>
+
+      <aside class="inventory panel">
+        <div class="inventory-title"><h2>Elements</h2><span class="count" id="itemCount">0</span></div>
+        <p class="panel-note">Drag a new copy into the habitat. Create as many as you need.</p>
+        <div class="tool-list" id="toolList">
+          <button class="tool-card food" draggable="true" data-type="grass" type="button"><span class="tool-icon"><img src="images/grass.png" alt="Grass"></span><span><strong>Grass</strong><small>Food target</small></span><b>+</b></button>
+          <button class="tool-card food" draggable="true" data-type="carrot" type="button"><span class="tool-icon"><img src="images/carrot.png" alt="Carrot"></span><span><strong>Carrot</strong><small>Food target</small></span><b>+</b></button>
+          <button class="tool-card danger" draggable="true" data-type="fox" type="button"><span class="tool-icon"><img src="images/fox.png" alt="Fox"></span><span><strong>Fox</strong><small>Danger source</small></span><b>+</b></button>
+          <button class="tool-card danger" draggable="true" data-type="knife" type="button"><span class="tool-icon"><img src="images/knife.png" alt="Knife"></span><span><strong>Knife</strong><small>Danger source</small></span><b>+</b></button>
+          <button class="tool-card sound" draggable="true" data-type="sound" type="button"><span class="tool-icon"><img src="images/load_sound_source.png" alt="Speaker"></span><span><strong>Speaker</strong><small>Sound source</small></span><b>+</b></button>
+        </div>
+        <div class="tool-tip"><span>●</span> Placed elements keep influencing the rabbit.</div>
+      </aside>
+    </section>
+
+    <section class="terminal panel">
+      <div class="terminal-toolbar"><h2>Reaction terminal</h2><button class="terminal-clear" id="terminalClear" type="button">Clear log</button></div>
+      <div class="terminal-body" id="terminalBody" aria-live="polite"><div class="log-line system"><span>00:00:00</span><b>SYS</b><em>Waiting for environment elements...</em></div></div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
